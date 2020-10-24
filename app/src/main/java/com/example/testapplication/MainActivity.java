@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("last_name", lastName);
                 intent.putExtra("email", email);
 
+
                 startActivity(intent);
             }
         });
