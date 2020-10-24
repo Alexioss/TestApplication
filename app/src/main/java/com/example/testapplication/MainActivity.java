@@ -16,13 +16,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnClick(View view) {
-        TextView txtFirstName = findViewById(R.id.txtFirstName);
-        TextView txtLastName = findViewById(R.id.txtLastName);
-        TextView txtEmail = findViewById(R.id.txtEmail);
-
         EditText etFirstName = findViewById(R.id.etFirstName);
         EditText etLastName = findViewById(R.id.etLastName);
         EditText etEmail = findViewById(R.id.etEmail);
+
+        TextView txtFirstName = findViewById(R.id.txtFirstName);
+        TextView txtLastName = findViewById(R.id.txtLastName);
+        TextView txtEmail = findViewById(R.id.txtEmail);
 
         txtFirstName.setText("First name: " + etFirstName.getText().toString());
         txtLastName.setText("Last name: " + etLastName.getText().toString());
