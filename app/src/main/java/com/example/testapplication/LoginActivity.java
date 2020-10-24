@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         TextView txtLastName = findViewById(R.id.txtLastName);
         TextView txtEmail = findViewById(R.id.txtEmail);
 
+
         txtFirstName.setText("Your first name: " + firstName);
         txtLastName.setText("Your first name: " + lastName);
         txtEmail.setText("Your first name: " + email);
