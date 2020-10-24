@@ -2,8 +2,10 @@ package com.example.testapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,19 +15,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void onBtnClick(View view) {
         EditText etFirstName = findViewById(R.id.etFirstName);
         EditText etLastName = findViewById(R.id.etLastName);
         EditText etEmail = findViewById(R.id.etEmail);
 
-        TextView txtFirstName = findViewById(R.id.txtFirstName);
-        TextView txtLastName = findViewById(R.id.txtLastName);
-        TextView txtEmail = findViewById(R.id.txtEmail);
+        Button btnChange = findViewById(R.id.btnChange);
+        btnChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String firstName = etFirstName.getText().toString();
+                String lastName = etLastName.getText().toString();
+                String email = etEmail.getText().toString();
 
-        txtFirstName.setText("First name: " + etFirstName.getText().toString());
-        txtLastName.setText("Last name: " + etLastName.getText().toString());
-        txtEmail.setText("Email: " + etEmail.getText().toString());
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+
+                intent.putExtra("first_name", firstName);
+                intent.putExtra("last_name", lastName);
+                intent.putExtra("email", email);
+
+                startActivity(intent);
+            }
+        });
     }
+
 }
